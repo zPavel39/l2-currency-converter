@@ -1,4 +1,5 @@
 import Header from '../components/header/header'
+import MainForm from '../components/main-form/MainForm'
 import ReloadPrompt from '../components/update-project-sw/ReloadPrompt'
 
 function App() {
@@ -9,13 +10,14 @@ function App() {
 			<Header />
 			<div className='container mx-lg relative  z-10'>
 				<blockquote className='flex flex-col justify-end items-end gap-4 mb-10 mx-5'>
-					<q className='text-white text-3xl text-end'>
+					<q className='text-white text-xl text-end'>
 						Трата денег — это искусство; трата времени — еще большее искусство
 					</q>
-					<cite className='text-slate-200 text-xl text-right '>
+					<cite className='text-slate-200 text-l text-right '>
 						- Карлос Руис Сафон.
 					</cite>
 				</blockquote>
+				<MainForm />
 			</div>
 		</div>
 	)
