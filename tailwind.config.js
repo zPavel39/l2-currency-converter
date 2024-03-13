@@ -11,7 +11,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Roboto', 'sans-serif'],
-				serif: ['Montserrat Roboto', 'serif'],
+				serif: ['Montserrat', 'serif'],
 				// Другие шрифты, которые вы хотите использовать
 			},
 			backgroundImage: {
