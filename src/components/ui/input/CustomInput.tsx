@@ -7,7 +7,7 @@ const CustomInput = ({ ...props }: any) => {
 			<input
 				type='number'
 				placeholder='Введите кол-во...'
-				className='w-72 p-2 text-xl rounded rounded-r-none'
+				className='m-w-72 p-2 text-xl rounded rounded-r-none'
 			/>
 		</div>
 	)
