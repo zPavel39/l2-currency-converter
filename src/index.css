@@ -83,3 +83,31 @@ input {
 	filter: blur(10px); /* Можно изменить значение */
 	/* Примените размытие */
 }
+.select-style {
+	border-radius: none !important;
+	outline: none !important;
+}
+.select-style__control {
+	border-radius: 0 !important;
+	border-top-right-radius: 4px !important ;
+	border-bottom-right-radius: 4px !important;
+	border: none !important;
+	outline: none !important;
+	height: 38.5px !important;
+	width: 100px !important;
+}
+.select-style__control--is-focused {
+	box-shadow: none !important;
+	border: none !important;
+}
+.select-style__value-container {
+	padding: 0 !important;
+}
+.select-style__indicator {
+	padding: 1px !important;
+}
+.select-style__placeholder {
+	font-size: 1.25rem !important;
+	line-height: 1.75rem !important;
+	color: hsla(0, 0%, 50%, 0.849) !important;
+}
