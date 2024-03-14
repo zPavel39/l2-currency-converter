@@ -8,7 +8,7 @@ function App() {
 			<ReloadPrompt />
 			<div className='absolute h-dvh inset-0 bg-black opacity-60 z-2'></div>
 			<Header />
-			<div className='container mx-lg relative  z-10'>
+			<div className='container mx-auto my-0 relative z-10'>
 				<blockquote className='flex flex-col justify-end items-end gap-4 mb-10 mx-5'>
 					<q className='text-white text-xl text-end'>
 						Трата денег — это искусство; трата времени — еще большее искусство

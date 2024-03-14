@@ -8,6 +8,7 @@ export default {
 				'120px': '120px',
 				'45px': '45px',
 				'300px': '300px',
+				'450px': '450px',
 			},
 			fontFamily: {
 				sans: ['Roboto', 'sans-serif'],

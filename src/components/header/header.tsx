@@ -14,7 +14,7 @@ const Header = () => {
 			</div>
 			<a
 				className=' text-white text-xl mx-5'
-				href='https://github.com/zPavel39/web-todo-test'
+				href='https://github.com/zPavel39/l2-currency-converter'
 			>
 				<img className='h-11 mt-1' src={LogoGh} alt='GH' />
 			</a>
