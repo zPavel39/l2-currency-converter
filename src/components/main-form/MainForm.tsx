@@ -2,12 +2,17 @@ import React from 'react'
 import Select from 'react-select'
 
 import CustomInput from '../ui/input/CustomInput'
-const options = [
+interface OptionType {
+	label: string
+	value: string
+}
+const options: OptionType[] = [
 	{ value: 'Аденка(кк)', label: 'Аденка(кк)' },
 	{ value: 'Рубли', label: 'Рубли' },
 	{ value: 'USDT', label: 'USDT' },
 ]
-const MainForm = () => {
+
+const MainForm: React.FC = () => {
 	return (
 		<div className=' relative flex flex-col justify-center gap-4 mx-4 p-9 max-w-450px'>
 			<div className='blurred-background absolute inset-0 z-10 '></div>

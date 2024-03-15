@@ -114,3 +114,6 @@ input {
 .select-style__single-value {
 	padding-left: 1px;
 }
+input[type='number'] {
+	-webkit-user-select: number; /* разрешаем только текстовый ввод */
+}
