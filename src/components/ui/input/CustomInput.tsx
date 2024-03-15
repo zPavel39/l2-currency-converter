@@ -6,6 +6,7 @@ const CustomInput = ({ ...props }: any) => {
 			<label className='text-white'>{props.name}</label>
 			<input
 				type='number'
+				autoComplete='off'
 				placeholder='Введите кол-во...'
 				className='m-w-72 p-2 text-xl rounded rounded-r-none'
 			/>
