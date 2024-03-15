@@ -111,3 +111,6 @@ input {
 	line-height: 1.75rem !important;
 	color: hsla(0, 0%, 50%, 0.849) !important;
 }
+.select-style__single-value {
+	padding-left: 1px;
+}

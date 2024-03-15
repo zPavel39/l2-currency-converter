@@ -11,7 +11,7 @@ const MainForm = () => {
 	return (
 		<div className=' relative flex flex-col justify-center gap-4 mx-4 p-9 max-w-450px'>
 			<div className='blurred-background absolute inset-0 z-10 '></div>
-			<div className='flex flex-col justify-center gap-4 z-20'>
+			<div className='flex flex-col justify-center gap-4 z-20 items-center'>
 				<div className='flex items-end'>
 					<CustomInput name={'Aденка'} />
 					<Select

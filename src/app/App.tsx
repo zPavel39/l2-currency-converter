@@ -17,7 +17,9 @@ function App() {
 						- Карлос Руис Сафон.
 					</cite>
 				</blockquote>
-				<MainForm />
+				<div className='flex justify-center'>
+					<MainForm />
+				</div>
 			</div>
 		</div>
 	)
