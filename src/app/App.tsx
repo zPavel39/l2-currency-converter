@@ -1,6 +1,6 @@
 import Header from '../components/header/header'
-import MainForm from '../components/main-form/MainForm'
 import ReloadPrompt from '../components/update-project-sw/ReloadPrompt'
+import MainForm from './main-form/MainForm'
 
 function App() {
 	return (
