@@ -7,8 +7,18 @@ export const useStore = create<IStore>((set, get) => ({
 	firstInputValue: 0,
 	secondInputValue: 0,
 	// для установки значения Select
-	setFirstSelectValue: selectValue => set({ firstSelectValue: selectValue }),
-	setSecondSelectValue: selectValue => set({ secondSelectValue: selectValue }),
+	setFirstSelectValue: selectValue =>
+		set({
+			firstSelectValue: selectValue,
+			secondInputValue: 0,
+			firstInputValue: 0,
+		}),
+	setSecondSelectValue: selectValue =>
+		set({
+			secondSelectValue: selectValue,
+			secondInputValue: 0,
+			firstInputValue: 0,
+		}),
 	// для установки значения CustomInput
 	setFirstInputValue: inputValue => {
 		const selectedRate = get().firstSelectValue?.rate.find(
