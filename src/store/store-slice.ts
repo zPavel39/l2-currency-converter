@@ -14,18 +14,20 @@ export const useStore = create<IStore>((set, get) => ({
 		const selectedRate = get().firstSelectValue?.rate.find(
 			rate => rate.type === get().secondSelectValue?.value
 		)
+		const calculatedValue = selectedRate ? inputValue * selectedRate.value : 0
 		set({
 			firstInputValue: inputValue,
-			secondInputValue: selectedRate ? inputValue * selectedRate.value : 0,
+			secondInputValue: Number(calculatedValue.toFixed(2)),
 		})
 	},
 	setSecondInputValue: inputValue => {
 		const selectedRate = get().secondSelectValue?.rate.find(
 			rate => rate.type === get().firstSelectValue?.value
 		)
+		const calculatedValue = selectedRate ? inputValue * selectedRate.value : 0
 		set({
 			secondInputValue: inputValue,
-			firstInputValue: selectedRate ? inputValue * selectedRate.value : 0,
+			firstInputValue: Number(calculatedValue.toFixed(2)),
 		})
 	},
 }))

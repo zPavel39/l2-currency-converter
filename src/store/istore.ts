@@ -8,4 +8,3 @@ interface IStore {
 	setFirstInputValue?: (inputValue: number) => void
 	setSecondInputValue?: (inputValue: number) => void
 }
-// для установки значения Select
