@@ -1,28 +1,20 @@
 import React from 'react'
 import Select from 'react-select'
-import { create } from 'zustand'
 import CustomInput from '../../components/ui/input/CustomInput'
+import { useStore } from '../../store/store-slice'
 import { options } from '../../api/optionCurrency'
-
-const useSelectValueStore = create<ISelectType>(set => ({
-	valueFirstSelect: null,
-	valueSecondSelect: null,
-	setValueFirstSelect: value => set({ valueFirstSelect: value }),
-	setValueSecondSelect: value => set({ valueSecondSelect: value }),
-}))
-const inputStore = create<IInputType>(set => ({
-	inputValue: null,
-	setInputValue: value => set({ inputValue: value }),
-}))
 
 const MainForm: React.FC = () => {
 	const {
-		valueSecondSelect,
-		valueFirstSelect,
-		setValueFirstSelect,
-		setValueSecondSelect,
-	} = useSelectValueStore()
-	const { inputValue, setInputValue } = inputStore()
+		firstSelectValue,
+		secondSelectValue,
+		firstInputValue,
+		secondInputValue,
+		setFirstSelectValue,
+		setSecondSelectValue,
+		setFirstInputValue,
+		setSecondInputValue,
+	} = useStore()
 
 	const handleSelectChange =
 		(action: number) => (selectedOption: IOptionType | null) => {
@@ -32,10 +24,10 @@ const MainForm: React.FC = () => {
 				)
 				if (selectedValue) {
 					if (action === 1) {
-						setValueFirstSelect(selectedValue)
+						setFirstSelectValue(selectedValue)
 					}
 					if (action === 2) {
-						setValueSecondSelect(selectedValue)
+						setSecondSelectValue(selectedValue)
 					}
 				}
 			}
@@ -47,29 +39,29 @@ const MainForm: React.FC = () => {
 			<div className='flex flex-col justify-center gap-4 z-20 items-center w-full'>
 				<div className='flex items-end w-full justify-center'>
 					<CustomInput
-						inputValue={inputValue}
-						setInputValue={setInputValue}
-						label={valueFirstSelect?.value || `Валюта`}
+						inputValue={firstInputValue}
+						setInputValue={setFirstInputValue}
+						label={firstSelectValue?.value || `Валюта`}
 					/>
 					<Select
 						classNamePrefix='select-style'
 						placeholder={`Валюта`}
-						value={valueFirstSelect}
-						onChange={handleSelectChange(1)}
+						value={firstSelectValue}
+						onChange={handleSelectChange(1)} // Передаем номер селекта
 						options={options}
 					/>
 				</div>
 				<div className='flex items-end w-full justify-center'>
 					<CustomInput
-						inputValue={inputValue}
-						setInputValue={setInputValue}
-						label={valueSecondSelect?.value || `Валюта`}
+						inputValue={secondInputValue}
+						setInputValue={setSecondInputValue}
+						label={secondSelectValue?.value || `Валюта`}
 					/>
 					<Select
 						classNamePrefix='select-style'
-						value={valueSecondSelect}
+						value={secondSelectValue}
 						placeholder={`Валюта`}
-						onChange={handleSelectChange(2)}
+						onChange={handleSelectChange(2)} // Передаем номер селекта
 						options={options}
 					/>
 				</div>

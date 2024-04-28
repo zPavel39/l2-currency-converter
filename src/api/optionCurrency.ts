@@ -3,7 +3,7 @@ export const options: IOptionType[] = [
 		value: 'Аденка(кк)',
 		label: 'Аденка(кк)',
 		rate: [
-			{ type: 'Рубли', value: 1 },
+			{ type: 'Рубли', value: 0.65 },
 			{ type: 'USDT', value: 1 },
 		],
 	},
@@ -11,7 +11,7 @@ export const options: IOptionType[] = [
 		value: 'Рубли',
 		label: 'Рубли',
 		rate: [
-			{ type: 'Аденка', value: 1 },
+			{ type: 'Аденка(кк)', value: 600 },
 			{ type: 'USDT', value: 1 },
 		],
 	},
@@ -20,7 +20,7 @@ export const options: IOptionType[] = [
 		label: 'USDT',
 		rate: [
 			{ type: 'Рубли', value: 1 },
-			{ type: 'Аденка', value: 1 },
+			{ type: 'Аденка(кк)', value: 1 },
 		],
 	},
 ]
