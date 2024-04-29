@@ -81,7 +81,7 @@ const MainForm: React.FC = () => {
 					</>
 				)}
 				{showCurrency && (
-					<div className='flex gap-10 justify-end items-start'>
+					<div className='flex gap-10 justify-end items-start mt-3'>
 						<VerticalTabs />
 						<div className='flex flex-col gap-2 justify-end width-full'>
 							{options[0].rate.map(i => (
