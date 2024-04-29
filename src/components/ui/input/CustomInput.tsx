@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CustomInput = ({ ...props }: any) => {
-	const { label, inputValue, setInputValue } = props
+	const { label, inputValue, setInputValue, type = 'input' } = props
 	return (
 		<div className='flex items-start flex-col w-full'>
 			<label className='text-white'>{label}</label>
@@ -11,7 +11,9 @@ const CustomInput = ({ ...props }: any) => {
 				type='number'
 				autoComplete='off'
 				placeholder='Введите кол-во...'
-				className='m-w-72 p-2 text-xl rounded rounded-r-none w-full'
+				className={`m-w-72 p-2 text-xl rounded ${
+					type === 'input' ? '' : 'rounded-r-none'
+				} w-full`}
 			/>
 		</div>
 	)

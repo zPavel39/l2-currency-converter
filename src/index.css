@@ -117,3 +117,6 @@ input {
 input[type='number'] {
 	-webkit-user-select: number; /* разрешаем только текстовый ввод */
 }
+.custom-button {
+	border-radius: 0.25rem;
+}
