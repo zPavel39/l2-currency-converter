@@ -104,7 +104,7 @@ const MainForm: React.FC = () => {
 				}}
 				className='blurred-background absolute inset-0 z-10 mt-10 '
 			></motion.div>
-			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px relative'>
+			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px relative mt-3'>
 				{!showCurrency && (
 					<>
 						<motion.div
