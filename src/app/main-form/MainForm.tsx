@@ -20,6 +20,7 @@ const MainForm: React.FC = () => {
 		setSecondInputValue,
 		settingSelectValue,
 	} = useStore()
+
 	const [showCurrency, setShowCurrency] = useState(false)
 	const handleSelectChange =
 		(action: number) => (selectedOption: IOptionType | null) => {
@@ -91,26 +92,35 @@ const MainForm: React.FC = () => {
 				</AnimatePresence>
 			</div>
 
-			<div className='blurred-background absolute inset-0 z-10 mt-10 '></div>
+			<motion.div
+				initial={{
+					opacity: 0,
+				}}
+				animate={{ opacity: [0, 0.6] }}
+				transition={{
+					duration: 0.8,
+					times: 0.3,
+					repeatDelay: 1,
+				}}
+				className='blurred-background absolute inset-0 z-10 mt-10 '
+			></motion.div>
 			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px relative'>
 				{!showCurrency && (
 					<>
 						<motion.div
 							key='1'
 							initial={{
-								scale: 0,
-								display: 'flex',
+								opacity: 0,
 								x: -200,
-								height: 59,
 								zIndex: 10,
 							}}
-							animate={{ scale: [0, 1], x: 0 }}
+							animate={{ opacity: [0, 1], x: 0 }}
 							transition={{
-								duration: 1,
+								duration: 0.8,
 								times: 0.3,
 								repeatDelay: 1,
+								ease: 'easeInOut',
 							}}
-							exit={{ scale: 0 }}
 							className='flex items-end w-full justify-center mt-4'
 						>
 							<CustomInput
@@ -130,19 +140,17 @@ const MainForm: React.FC = () => {
 						<motion.div
 							key='2'
 							initial={{
-								display: 'flex',
-								scale: 0,
-								height: 59,
+								opacity: 0,
 								x: -200,
 								zIndex: 10,
 							}}
-							animate={{ scale: [0, 1], x: 0 }}
+							animate={{ opacity: [0, 1], x: 0 }}
 							transition={{
 								duration: 1,
+								ease: 'easeInOut',
 								times: 0.3,
 								repeatDelay: 1,
 							}}
-							exit={{ scale: 0 }}
 							className='flex items-end w-full justify-center'
 						>
 							<CustomInput
@@ -162,13 +170,42 @@ const MainForm: React.FC = () => {
 					</>
 				)}
 				{showCurrency && (
-					<div className='flex gap-10 justify-end items-center mt-2'>
-						<VerticalTabs />
-						<div className='flex flex-col gap-2 justify-end width-full'>
+					<div className='flex gap-10 justify-end items-center mt-2 relative'>
+						<motion.div
+							key='3'
+							initial={{
+								opacity: 0,
+								y: -200,
+							}}
+							animate={{ opacity: [0, 1], y: 0 }}
+							transition={{
+								duration: 0.8,
+								ease: 'easeInOut',
+								times: 0.3,
+								repeatDelay: 1,
+							}}
+						>
+							<VerticalTabs />
+						</motion.div>
+						<motion.div
+							key='4'
+							initial={{
+								opacity: 0,
+								x: 200,
+							}}
+							animate={{ opacity: [0, 1], x: 0 }}
+							transition={{
+								duration: 0.8,
+								times: 0.3,
+								ease: 'easeInOut',
+								repeatDelay: 1,
+							}}
+							className='flex flex-col gap-2 justify-end width-full'
+						>
 							{options[settingSelectValue].rate.map(i => (
 								<CustomInput inputValue={i.value} label={i.type} key={i.type} />
 							))}
-						</div>
+						</motion.div>
 					</div>
 				)}
 			</div>
