@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import { options } from '../../../api/optionCurrency'
+import { useStore } from '../../../store/store-slice'
 
 function a11yProps(index: number) {
 	return {
@@ -12,10 +13,10 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-	const [value, setValue] = React.useState(0)
+	const { settingSelectValue, changeSettingSelectValue } = useStore()
 
 	const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-		setValue(newValue)
+		changeSettingSelectValue(newValue)
 	}
 
 	return (
@@ -30,7 +31,7 @@ export default function VerticalTabs() {
 			<Tabs
 				orientation='vertical'
 				variant='scrollable'
-				value={value}
+				value={settingSelectValue}
 				onChange={handleChange}
 				visibleScrollbar
 				aria-label='Vertical tabs example'

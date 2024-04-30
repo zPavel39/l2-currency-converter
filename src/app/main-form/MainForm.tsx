@@ -16,6 +16,7 @@ const MainForm: React.FC = () => {
 		setSecondSelectValue,
 		setFirstInputValue,
 		setSecondInputValue,
+		settingSelectValue,
 	} = useStore()
 	const [showCurrency, setShowCurrency] = useState(false)
 	const handleSelectChange =
@@ -84,7 +85,7 @@ const MainForm: React.FC = () => {
 					<div className='flex gap-10 justify-end items-center mt-3'>
 						<VerticalTabs />
 						<div className='flex flex-col gap-2 justify-end width-full'>
-							{options[0].rate.map(i => (
+							{options[settingSelectValue].rate.map(i => (
 								<CustomInput inputValue={i.value} label={i.type} key={i.type} />
 							))}
 						</div>

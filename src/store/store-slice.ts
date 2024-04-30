@@ -6,6 +6,7 @@ export const useStore = create<IStore>((set, get) => ({
 	secondSelectValue: options[1] || null,
 	firstInputValue: 0,
 	secondInputValue: 0,
+	settingSelectValue: 0,
 	// для установки значения Select
 	setFirstSelectValue: selectValue =>
 		set({
@@ -39,5 +40,8 @@ export const useStore = create<IStore>((set, get) => ({
 			secondInputValue: inputValue,
 			firstInputValue: Number(calculatedValue.toFixed(2)),
 		})
+	},
+	changeSettingSelectValue: settingSelectValue => {
+		set({ settingSelectValue: settingSelectValue })
 	},
 }))
