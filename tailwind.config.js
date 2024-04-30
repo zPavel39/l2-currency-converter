@@ -9,6 +9,7 @@ export default {
 				'45px': '45px',
 				'300px': '300px',
 				'450px': '450px',
+				'144px': '144px',
 			},
 			fontFamily: {
 				sans: ['Roboto', 'sans-serif'],

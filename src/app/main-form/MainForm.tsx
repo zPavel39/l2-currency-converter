@@ -3,8 +3,10 @@ import Select from 'react-select'
 import CustomInput from '../../components/ui/input/CustomInput'
 import { useStore } from '../../store/store-slice'
 import { options } from '../../api/optionCurrency'
-import CustomButton from '../../components/ui/custom-button/CustomButton'
 import VerticalTabs from '../../components/ui/tabs-currency/TabsCurrency'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const MainForm: React.FC = () => {
 	const {
@@ -37,16 +39,60 @@ const MainForm: React.FC = () => {
 		}
 
 	return (
-		<div className=' relative flex flex-col justify-center gap-4 mx-4 p-9 max-w-450px w-full'>
-			<div className='flex justify-end w-full'>
-				<CustomButton
-					setAction={() => setShowCurrency(!showCurrency)}
-					show={showCurrency}
-				/>
+		<div className=' relative flex flex-col justify-center gap-1 mx-4 p-9 max-w-450px w-full'>
+			<div className='flex justify-end w-full relative'>
+				<AnimatePresence>
+					{!showCurrency && (
+						<motion.button
+							key='settings'
+							initial={{
+								position: 'absolute',
+								scale: 0,
+								top: -24,
+								zIndex: 10,
+								height: 31,
+								width: 31,
+							}}
+							animate={{ rotate: 360, scale: [0, 1] }}
+							transition={{
+								duration: 1,
+								times: 0.3,
+								repeatDelay: 1,
+							}}
+							exit={{ scale: 0, rotate: [0, 360] }}
+							onClick={() => setShowCurrency(!showCurrency)}
+						>
+							<SettingsOutlinedIcon fontSize='large' sx={{ color: 'white' }} />
+						</motion.button>
+					)}
+					{showCurrency && (
+						<motion.button
+							key='close'
+							initial={{
+								position: 'absolute',
+								top: -24,
+								scale: 0,
+								zIndex: 10,
+								height: 31,
+								width: 31,
+							}}
+							animate={{ rotate: 360, scale: [0, 1] }}
+							transition={{
+								duration: 1,
+								times: 0.3,
+								repeatDelay: 1,
+							}}
+							exit={{ rotate: [0, 360], scale: 0 }}
+							onClick={() => setShowCurrency(!showCurrency)}
+						>
+							<CloseOutlinedIcon fontSize='large' sx={{ color: 'white' }} />
+						</motion.button>
+					)}
+				</AnimatePresence>
 			</div>
 
-			<div className='blurred-background absolute inset-0 z-10 mt-16'></div>
-			<div className='flex flex-col justify-center gap-4 z-20 w-full items-end'>
+			<div className='blurred-background absolute inset-0 z-10 mt-16 '></div>
+			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px'>
 				{!showCurrency && (
 					<>
 						<div className='flex items-end w-full justify-center'>
@@ -82,7 +128,7 @@ const MainForm: React.FC = () => {
 					</>
 				)}
 				{showCurrency && (
-					<div className='flex gap-10 justify-end items-center mt-3'>
+					<div className='flex gap-10 justify-end items-center'>
 						<VerticalTabs />
 						<div className='flex flex-col gap-2 justify-end width-full'>
 							{options[settingSelectValue].rate.map(i => (
