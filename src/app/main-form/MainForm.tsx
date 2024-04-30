@@ -92,10 +92,27 @@ const MainForm: React.FC = () => {
 			</div>
 
 			<div className='blurred-background absolute inset-0 z-10 mt-10 '></div>
-			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px'>
+			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px relative'>
 				{!showCurrency && (
 					<>
-						<div className='flex items-end w-full justify-center mt-4'>
+						<motion.div
+							key='1'
+							initial={{
+								scale: 0,
+								display: 'flex',
+								x: -200,
+								height: 59,
+								zIndex: 10,
+							}}
+							animate={{ scale: [0, 1], x: 0 }}
+							transition={{
+								duration: 1,
+								times: 0.3,
+								repeatDelay: 1,
+							}}
+							exit={{ scale: 0 }}
+							className='flex items-end w-full justify-center mt-4'
+						>
 							<CustomInput
 								inputValue={firstInputValue}
 								setInputValue={setFirstInputValue}
@@ -109,8 +126,25 @@ const MainForm: React.FC = () => {
 								onChange={handleSelectChange(1)} // Передаем номер селекта
 								options={options}
 							/>
-						</div>
-						<div className='flex items-end w-full justify-center'>
+						</motion.div>
+						<motion.div
+							key='2'
+							initial={{
+								display: 'flex',
+								scale: 0,
+								height: 59,
+								x: -200,
+								zIndex: 10,
+							}}
+							animate={{ scale: [0, 1], x: 0 }}
+							transition={{
+								duration: 1,
+								times: 0.3,
+								repeatDelay: 1,
+							}}
+							exit={{ scale: 0 }}
+							className='flex items-end w-full justify-center'
+						>
 							<CustomInput
 								inputValue={secondInputValue}
 								setInputValue={setSecondInputValue}
@@ -124,7 +158,7 @@ const MainForm: React.FC = () => {
 								onChange={handleSelectChange(2)} // Передаем номер селекта
 								options={options}
 							/>
-						</div>
+						</motion.div>
 					</>
 				)}
 				{showCurrency && (
