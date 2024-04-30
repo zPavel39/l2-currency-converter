@@ -38,6 +38,7 @@ export default function VerticalTabs() {
 			>
 				{options.map((option, index) => (
 					<Tab
+						key={index}
 						sx={{ color: 'white' }}
 						label={option.label}
 						{...a11yProps(index)}
