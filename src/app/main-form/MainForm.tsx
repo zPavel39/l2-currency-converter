@@ -91,11 +91,11 @@ const MainForm: React.FC = () => {
 				</AnimatePresence>
 			</div>
 
-			<div className='blurred-background absolute inset-0 z-10 mt-16 '></div>
+			<div className='blurred-background absolute inset-0 z-10 mt-10 '></div>
 			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px'>
 				{!showCurrency && (
 					<>
-						<div className='flex items-end w-full justify-center'>
+						<div className='flex items-end w-full justify-center mt-4'>
 							<CustomInput
 								inputValue={firstInputValue}
 								setInputValue={setFirstInputValue}
@@ -128,7 +128,7 @@ const MainForm: React.FC = () => {
 					</>
 				)}
 				{showCurrency && (
-					<div className='flex gap-10 justify-end items-center'>
+					<div className='flex gap-10 justify-end items-center mt-2'>
 						<VerticalTabs />
 						<div className='flex flex-col gap-2 justify-end width-full'>
 							{options[settingSelectValue].rate.map(i => (
