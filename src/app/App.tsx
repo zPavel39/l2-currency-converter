@@ -5,24 +5,26 @@ import Gnomka from './../assets/images/gnomka2.png'
 
 function App() {
 	return (
-		<div className='w-dvw bg-main-map bg-cover bg-center flex-col justify-center'>
-			<ReloadPrompt />
-			<div className='absolute h-dvh inset-0 bg-black opacity-60 z-2'></div>
-			<Header />
-			<div className='calc-container container mx-auto my-0 relative z-10'>
-				<blockquote className='flex flex-col justify-end items-end gap-4 mb-5 mx-5'>
-					<q className='text-white text-xl text-end'>
-						Трата денег — это искусство; трата времени — еще большее искусство
-					</q>
-					<cite className='text-slate-200 text-l text-right '>
-						- Карлос Руис Сафон.
-					</cite>
-				</blockquote>
-				<div className='flex justify-center'>
-					<MainForm />
+		<div>
+			<div className='w-dvw bg-main-map h-dvh bg-center flex-col justify-center'>
+				<ReloadPrompt />
+				<div className=' container mx-auto my-0 relative z-10'>
+					<Header />
+					<blockquote className='flex flex-col justify-end items-end gap-4 mb-5 mx-5'>
+						<q className='text-white text-xl text-end'>
+							Трата денег — это искусство; трата времени — еще большее искусство
+						</q>
+						<cite className='text-slate-200 text-l text-right '>
+							- Карлос Руис Сафон.
+						</cite>
+					</blockquote>
+					<div className='flex justify-center'>
+						<MainForm />
+					</div>
 				</div>
+				<img src={Gnomka} className='img-app absolute bottom-0 z-10' />
 			</div>
-			<img src={Gnomka} className='img-app absolute bottom-0 z-10' />
+			<div className='absolute inset-0 h-full bg-black opacity-60 z-2'></div>
 		</div>
 	)
 }

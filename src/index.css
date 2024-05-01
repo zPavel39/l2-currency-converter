@@ -120,12 +120,10 @@ input[type='number'] {
 .custom-button {
 	border-radius: 0.25rem;
 }
-.calc-container {
-	height: calc(100vh - 49px);
-}
+
 .img-app {
 	left: 0;
-	bottom: -10px;
+	bottom: 0px;
 	max-width: none;
 	height: 50%;
 }
