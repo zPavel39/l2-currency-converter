@@ -91,7 +91,6 @@ const MainForm: React.FC = () => {
 					)}
 				</AnimatePresence>
 			</div>
-
 			<motion.div
 				initial={{
 					opacity: 0,

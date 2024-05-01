@@ -14,7 +14,6 @@ export default {
 			fontFamily: {
 				sans: ['Roboto', 'sans-serif'],
 				serif: ['Montserrat', 'serif'],
-				// Другие шрифты, которые вы хотите использовать
 			},
 			backgroundImage: {
 				'main-map': "url('/src/assets/images/AdenAndElmore.jpg')",

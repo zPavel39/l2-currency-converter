@@ -2,8 +2,8 @@ import { create } from 'zustand'
 import { options } from '../api/optionCurrency'
 
 export const useStore = create<IStore>((set, get) => ({
-	firstSelectValue: options[0] || null,
-	secondSelectValue: options[1] || null,
+	firstSelectValue: options[1] || null,
+	secondSelectValue: options[0] || null,
 	firstInputValue: 0,
 	secondInputValue: 0,
 	settingSelectValue: 0,
