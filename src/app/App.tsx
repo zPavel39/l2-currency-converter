@@ -6,7 +6,7 @@ import Gnomka from './../assets/images/gnomka2.png'
 function App() {
 	return (
 		<div>
-			<div className='w-dvw bg-main-map h-dvh bg-center flex-col justify-center'>
+			<div className='w-dvw bg-main-map h-dvh bg-center bg-cover flex-col justify-center'>
 				<ReloadPrompt />
 				<div className=' container mx-auto my-0 relative z-10'>
 					<Header />
