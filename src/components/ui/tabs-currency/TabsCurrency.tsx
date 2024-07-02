@@ -25,7 +25,7 @@ export default function VerticalTabs() {
 				flexGrow: 1,
 				bgcolor: 'background.cer',
 				display: 'flex',
-				height: 144,
+				height: 'fit-content',
 			}}
 		>
 			<Tabs
