@@ -50,7 +50,6 @@ const MainForm: React.FC = () => {
 								position: 'absolute',
 								scale: 0,
 								top: -24,
-								zIndex: 10,
 								height: 31,
 								width: 31,
 							}}
@@ -73,7 +72,6 @@ const MainForm: React.FC = () => {
 								position: 'absolute',
 								top: -24,
 								scale: 0,
-								zIndex: 10,
 								height: 31,
 								width: 31,
 							}}
@@ -101,7 +99,7 @@ const MainForm: React.FC = () => {
 					times: 0.3,
 					repeatDelay: 1,
 				}}
-				className='blurred-background absolute inset-0 z-10 mt-10 '
+				className='blurred-background absolute inset-0  mt-10 '
 			></motion.div>
 			<div className='flex flex-col justify-center gap-2 z-20 w-full items-end min-h-144px relative mt-3'>
 				{!showCurrency && (
@@ -111,7 +109,6 @@ const MainForm: React.FC = () => {
 							initial={{
 								opacity: 0,
 								x: -200,
-								zIndex: 10,
 							}}
 							animate={{ opacity: [0, 1], x: 0 }}
 							transition={{
@@ -141,7 +138,6 @@ const MainForm: React.FC = () => {
 							initial={{
 								opacity: 0,
 								x: -200,
-								zIndex: 10,
 							}}
 							animate={{ opacity: [0, 1], x: 0 }}
 							transition={{

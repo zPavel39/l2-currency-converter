@@ -96,12 +96,18 @@ input {
 	height: 38.5px !important;
 	width: 100px !important;
 }
+.select-style__menu {
+	z-index: 160 !important;
+}
 .select-style__control--is-focused {
 	box-shadow: none !important;
 	border: none !important;
 }
 .select-style__value-container {
 	padding: 0 !important;
+}
+.select-style__control--menu-is-open {
+	z-index: 60 !important;
 }
 .select-style__indicator {
 	padding: 1px !important;
