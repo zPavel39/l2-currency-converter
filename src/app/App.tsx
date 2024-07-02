@@ -1,7 +1,7 @@
 import Header from '../components/header/header'
 import ReloadPrompt from '../components/update-project-sw/ReloadPrompt'
 import MainForm from './main-form/MainForm'
-import Gnomka from './../assets/images/gnomka2.png'
+import Gnomka from './../assets/images/gnomka2.webp'
 
 function App() {
 	return (

@@ -16,7 +16,7 @@ export default {
 				serif: ['Montserrat', 'serif'],
 			},
 			backgroundImage: {
-				'main-map': "url('/src/assets/images/AdenAndElmore.jpg')",
+				'main-map': "url('/src/assets/images/AdenAndElmore.webp')",
 			},
 		},
 	},
