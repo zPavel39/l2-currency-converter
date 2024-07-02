@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Select from 'react-select'
 import CustomInput from '../../components/ui/input/CustomInput'
 import { useStore } from '../../store/store-slice'
-import { options } from '../../api/optionCurrency'
 import VerticalTabs from '../../components/ui/tabs-currency/TabsCurrency'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
@@ -41,12 +40,9 @@ const MainForm: React.FC = () => {
 			}
 		}
 	const handleChangeCurrency = (field: string, value: number) => {
-		console.log('field', field)
-		console.log('value', value)
 		changeOptions(settingSelectValue, field, value)
 	}
-	console.log('settingSelectValue', settingSelectValue)
-	console.log('allOptions', allOptions)
+
 	return (
 		<div className=' relative flex flex-col justify-center gap-1 mx-4 p-9 max-w-450px w-full'>
 			<div className='flex justify-end w-full relative'>
