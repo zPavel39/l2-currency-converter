@@ -1,7 +1,7 @@
 import Header from '../components/header/header'
 import ReloadPrompt from '../components/update-project-sw/ReloadPrompt'
-import MainForm from './main-form/MainForm'
 import Gnomka from './../assets/images/gnomka2.webp'
+import MainForm from './main-form/MainForm'
 
 function App() {
 	return (
@@ -22,7 +22,9 @@ function App() {
 						<MainForm />
 					</div>
 				</div>
-				<img src={Gnomka} className='img-app absolute bottom-0 z-10' />
+				<div className='z-11'>
+					<img src={Gnomka} className='img-app absolute bottom-0 z-10' style={{zIndex: '1'}} />
+				</div>
 			</div>
 			<div className='absolute inset-0 h-full bg-black opacity-60 z-2'></div>
 		</div>

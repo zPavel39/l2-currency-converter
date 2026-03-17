@@ -1,11 +1,11 @@
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 import Select from 'react-select'
 import CustomInput from '../../components/ui/input/CustomInput'
-import { useStore } from '../../store/store-slice'
 import VerticalTabs from '../../components/ui/tabs-currency/TabsCurrency'
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useStore } from '../../store/store-slice'
 
 const MainForm: React.FC = () => {
 	const {
@@ -44,8 +44,8 @@ const MainForm: React.FC = () => {
 	}
 
 	return (
-		<div className=' relative flex flex-col justify-center gap-1 mx-4 p-9 max-w-450px w-full'>
-			<div className='flex justify-end w-full relative'>
+		<div className='relative flex flex-col justify-center gap-1 mx-4 p-9 max-w-450px w-full z-11'>
+			<div className='flex justify-end w-full relative z-11'>
 				<AnimatePresence>
 					{!showCurrency && (
 						<motion.button
